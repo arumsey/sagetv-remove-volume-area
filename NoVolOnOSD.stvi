@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="RWLMZ-2">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="RWLMZ-3"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="RWLMZ-4"/>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="RWLMZ-5">
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;OPUS4A-176852&quot;)" Sym="RWLMZ-9">
+    <Branch Name="else" Sym="RWLMZ-10">
+     <Action Name="SetWidgetProperty(Widg, &quot;Value&quot;, &quot;0&quot;)" Sym="RWLMZ-12"/>
+    </Branch>
+    <Branch Name="null" Sym="RWLMZ-11">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=OPUS4A-176852 could not change property Value from: \&quot;0.04\&quot; to: \&quot;0\&quot;&quot;)" Sym="RWLMZ-13"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="RWLMZ-6"/>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="RWLMZ-7"/>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="RWLMZ-8"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="RWLMZ-14"/>
+ </Hook>
+</Module>
